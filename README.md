@@ -4,29 +4,29 @@
 1.In this project I used data from twelve different stocks to analyze the performance of the stocks during the years of 2018 and 2017. The challenge was to refactor the code to shorten the amount of time that it takes for the code to run the analysis. This can be helpful in the world of data analytics because when writing code for the first time may be clunky and need some revisions to run smoother. 
 
 ###Process
-1.I utilized the starter code that was provided at the end of the module. With this code there we several additions that I needed to add.
-A.First, I needed to add a ticker index and set it equal to zero (tickerIndex = 0)
-B.Next, I created three output arrays 
--Dim tickerVolumes(12) As Long
--Dim tickerStartingPrices(12) As Single
--Dim tickerEndingPrices(12) As Single
-2.Once I had done that, I now needed to create a for loop that would initialize the tickerVolumes to zero
-A.For i = 0 To 11       
+1. I utilized the starter code that was provided at the end of the module. With this code there we several additions that I needed to add.
+- First, I needed to add a ticker index and set it equal to zero (tickerIndex = 0)
+- Next, I created three output arrays 
+Dim tickerVolumes(12) As Long
+Dim tickerStartingPrices(12) As Single
+Dim tickerEndingPrices(12) As Single
+2. Once I had done that, I now needed to create a for loop that would initialize the tickerVolumes to zero
+- For i = 0 To 11       
         tickerVolumes(i) = 0    
   Next i
-B.Now it was the time to create a nested for loop that would run through all the data and populate the necessary data for each stock.
--To do this I started the loop to count from the first row of data. (For i = 2 To RowCount)
-3.Next, I needed to increase the volume of the current ticker
-A.tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
-B.From here I needed to check if the current row is the first row with the selected ticker index. 
+- Now it was the time to create a nested for loop that would run through all the data and populate the necessary data for each stock.
+- To do this I started the loop to count from the first row of data. (For i = 2 To RowCount)
+- Next, I needed to increase the volume of the current ticker
+- tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
+- From here I needed to check if the current row is the first row with the selected ticker index. 
 - If Cells(i - 1, 1).Value <> tickers(tickerIndex) Then      
     tickerStartingPrices(tickerIndex) = Cells(i, 6).Value           
   End If
-C.After that I needed to check if the current row was the last row with the selected ticker index
--If Cells(i + 1, 1).Value <> tickers(tickerIndex) Then      
+- After that I needed to check if the current row was the last row with the selected ticker index
+- If Cells(i + 1, 1).Value <> tickers(tickerIndex) Then      
     tickerEndingPrices(tickerIndex) = Cells(i, 6).Value
-D.Next I needed the for loop to increase the tickerIndex by 1 and close the nested loop
--tickerIndex = tickerIndex + 1
+- Next I needed the for loop to increase the tickerIndex by 1 and close the nested loop
+- tickerIndex = tickerIndex + 1
     End If
  Next i
  
@@ -34,6 +34,7 @@ D.Next I needed the for loop to increase the tickerIndex by 1 and close the nest
 I found that the code ran much faster than the code that was taught within the modules.  
 ![Moudule_Analysis](https://github.com/mselover21/StockAnalysis/blob/main/Module_Analysis.PNG)
 Although the code functioned and was accurate it was unfortunately very slow to produce a result. When the code was refactored with steps above the results were much faster.
+
 ![Refactored_Analysis](https://github.com/mselover21/StockAnalysis/blob/main/Refactored_Analysis.PNG)
 
 #####Summary
