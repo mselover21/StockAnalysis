@@ -33,7 +33,8 @@ Dim tickerEndingPrices(12) As Single
 ####Analysis
 I found that the code ran much faster than the code that was taught within the modules.  
 ![Moudule_Analysis](https://github.com/mselover21/StockAnalysis/blob/main/Module_Analysis.PNG)
-Although the code functioned and was accurate it was unfortunately very slow to produce a result. When the code was refactored with steps above the results were much faster.
+Although the code functioned and was accurate it was unfortunately very slow to produce a result. 
+When the code was refactored with steps above the results were much faster.
 
 ![Refactored_Analysis](https://github.com/mselover21/StockAnalysis/blob/main/Refactored_Analysis.PNG)
 
