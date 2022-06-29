@@ -35,8 +35,8 @@ Dim tickerEndingPrices(12) As Single
 
 ![Moudule_Analysis](https://github.com/mselover21/StockAnalysis/blob/main/Module_Analysis.PNG)
 
-![VBA_Challenge_2017]
-![VBA_Challenge_2018]
+![VBA_Challenge_2017](https://github.com/mselover21/StockAnalysis/blob/main/VBA_Challenge_2017.PNG)
+![VBA_Challenge_2018](https://github.com/mselover21/StockAnalysis/blob/main/VBA_Challenge_2018.PNG)
 
 #####Summary
 1. Refactoring code has many advantages as well as disadvantages. Among the advantages is the reduction of time that it takes for analysis to take place. This when applied in the real world is crucial when you are dealing with increasingly large sets of data. I also found that the refactoring of code can simplify it and make it easier for others who you may be working with know what each line of code is used for. Among the disadvantages I found the amount of time it took to write the code far longer than I had anticipated. I am learning an entirely new language and can estimate that that was part of the issue. I do feel that even with the length of time that it took to refactor that it is certainly well worth the effort when applied to real world scenarios.
