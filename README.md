@@ -1,2 +1,45 @@
-# StockAnalysis
-Analyze Green Energy Stock to Make Informed Investments 
+#Refactored Stock Analysis
+##Project Overview
+-In this project I used data from twelve different stocks to analyze the performance of the stocks during the years of 2018 and 2017. The challenge was to refactor     the code to shorten the amount of time that it takes for the code to run the analysis. This can be helpful in the world of data analytics because when writing code     for the first time may be clunky and need some revisions to run smoother.
+###Process
+1)	I utilized the starter code that was provided at the end of the module. With this code there we several additions that I needed to add.
+  A)	First I needed to add a ticker index and set it equal to zero (tickerIndex = 0)
+  B)	Next I created three output arrays 
+    -	Dim tickerVolumes(12) As Long
+    -	Dim tickerStartingPrices(12) As Single
+    -	Dim tickerEndingPrices(12) As Single
+2)	Once I had done that I now needed to create a for loop that would initialize the tickerVolumes to zero
+  A)	For i = 0 To 11     
+        tickerVolumes(i) = 0   
+      Next i
+B)	Now it was the time to create a nested for loop that would run through all the data and populate the necessary data for each stock.
+    -  To do this I started the loop to count from the first row of data. (For i = 2 To RowCount)
+3)  Next, I needed to increase the volume of the current ticker
+	A) tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
+  B) From here I needed to check if the current row is the first row with the selected ticker index. 
+         If Cells(i - 1, 1).Value <> tickers(tickerIndex) Then    
+            tickerStartingPrices(tickerIndex) = Cells(i, 6).Value
+          End If
+  C)	After that I needed to check if the current row was is the last row with the selected ticker index
+      If Cells(i + 1, 1).Value <> tickers(tickerIndex) Then      
+            tickerEndingPrices(tickerIndex) = Cells(i, 6).Value
+  D)	Next I needed the for loop to increase the tickerIndex by 1 and close the nested loop
+        tickerIndex = tickerIndex + 1
+	    End If
+  Next i
+4)Finally I needed to create an output for the loop with the outputs of; Ticker, Total Daily Volume, and Return.
+	For i = 0 To 11       
+        Worksheets("All Stocks Analysis").Activate
+        Cells(4 + i, 1).Value = tickers(i)
+        Cells(4 + i, 2).Value = tickerVolumes(i)
+        Cells(4 + i, 3).Value = tickerEndingPrices(i) / tickerStartingPrices(i) - 1 
+      Next i
+####Analysis
+I found that the code ran much faster than the code that was taught within the modules.  
+Although the code functioned and was accurate it was unfortunately very slow to produce a result. When the code was refactored with steps above the results were much faster.
+![ModuleAnalysis.PNG]https://github.com/mselover21/StockAnalysis/blob/main/Module_Analysis.PNG
+Although the code functioned and was accurate it was unfortunately very slow to produce a result. When the code was refactored with steps above the results were much faster.
+![RefactoredAnalysis.PNG]https://github.com/mselover21/StockAnalysis/blob/main/Refactored_Analysis.PNG
+#####Summary
+1)	Refactoring code has many advantages as well as disadvantages. Among the advantages is the reduction of time that it takes for analysis to take place. This when applied in the real world is crucial when you are dealing with increasingly large sets of data. I also found that the refactoring of code can simplify it and make it easier for others who you may be working with know what each line of code is used for. Among the disadvantages I found the amount of time it took to write the code far longer than I had anticipated. I am learning an entirely new language and can estimate that that was part of the issue. I do feel that even with the length of time that it took to refactor that it is certainly well worth the effort when applied to real world scenarios.
+2)	The original code that we used had a couple of advantages and disadvantages. I feel strongly that writing original code was better for the learning experience. It was broken down further than the refactored code which was beneficial for me to understand this new language. After refactoring the code, I see that the disadvantage comes from the length of time it takes to create an overly defined code. This could be helpful in a real-world scenario in relation to creating a rough draft for the code. However, to produce a clean well written and faster code would be better when utilizing very large sets of data.
